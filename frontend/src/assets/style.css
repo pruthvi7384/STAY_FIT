@@ -1,0 +1,327 @@
+/* ===========Import Google Fonts=========== */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap'); 
+/* ========X===Import Google Fonts===X======== */
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+:root{
+    --backgroundColor: #FFFFFF;
+    --colorLogo: #9dcc6b;
+    --colorLogo1: #0a9c4b;
+    --colorLogo2: #d0d0d0;
+    --colorSubHadding: #1b2837;
+    --colorSpan : #737a80;
+    --colorPara: #021219;
+    --buttonText:#fff;
+    --boxShadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    --boxshadow1: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    --font-weigh4: 400;
+    --font-weigh5: 500;
+    --font-weigh6: 600;
+}
+
+body{
+    background-color: var(--backgroundColor);
+    font-family: 'Poppins', sans-serif;
+    color: var(--colorPara);
+}
+
+a:hover , a:focus{
+    color: inherit;
+}
+
+ul{
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+/* =========== LOGO =========== */
+    .logo #spanLogo{
+        padding:2px;
+        color: var(--colorLogo1);
+    }
+    .logo #span1{
+        color: var(--colorSubHadding);
+    }
+    .logo #span2{
+        color: var(--colorSpan);
+    }
+/* =======X==== LOGO ====X======= */
+
+/* ============== TOP BAR ============== */
+    .top_bar{
+        padding: 10px;
+    }
+    .top_bar h1{
+        color: var(--colorLogo1);
+        font-size: 35px;
+        font-weight: var(--font-weigh6);
+    }
+    .top_bar .btn{
+        background-color: var(--colorLogo1);
+        color: var(--buttonText);
+        font-weight: var(--font-weigh5);
+    }
+    .top_bar .btn:focus{
+        background-color: var(--colorLogo1);
+        color: var(--buttonText);
+        font-weight: var(--font-weigh5);
+    }
+/* ==========X=== TOP BAR ===X========== */
+
+/* ============== HOME ============== */
+    .home{
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .home .home_row{
+        box-shadow: var(--boxshadow1);
+        padding: 20px;
+        border-radius: 10px;
+        flex-basis: 50%;
+    }
+    .home .home_row .heading{
+        border-bottom: 1px solid var(--colorLogo1);
+        padding: 10px 0px;
+        text-align: center;
+    }
+    .home .home_row .heading .welcomeMessage h2{
+        color: var(--colorLogo1);
+        padding-bottom: 5px;
+        font-weight: var(--font-weigh6);
+        font-size: 28px;
+    }
+    .home .home_row .heading .welcomeMessage h2 span{
+        color: var(--colorSubHadding);
+    }
+    .home .home_row .home_card{
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .home .home_row .home_card .card_body{
+        margin: 10px;
+        flex-basis: 50%;
+        box-shadow: var(--boxShadow);
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+    }
+    .home .home_row .home_card .card_body p{
+        color: var(--colorSpan);
+        font-weight: var(--font-weigh5);
+        font-size: 18px;
+    }
+    .home .home_row .home_card .card_body .btn{
+        background-color: var(--colorLogo1);
+        color: var(--buttonText);
+        font-weight: var(--font-weigh5);
+    }
+/* ==========X=== HOME ===X========== */
+
+/* ============= ACCOUNT FROM ============= */
+    .account_form{
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .account_form .account_body{
+        flex-basis: 40%;
+        box-shadow: var(--boxShadow);
+        padding: 20px;
+        border-radius: 10px;
+    }
+    .account_form .account_body .heading{
+        border-bottom: 1px solid var(--colorLogo1);
+        padding: 10px 0px;
+    }
+    .account_form .account_body .heading h2{
+        color: var(--colorLogo1);
+        font-size: 28px;
+        font-weight: var(--font-weigh6);
+        text-align: center;
+    }
+    .account_form .account_body .form{
+        margin-top: 20px;
+    }
+    .account_form .account_body .form .form-label{
+        color: var(--colorSubHadding);
+        font-weight: var(--font-weigh4);
+    }
+    .account_form .account_body .form .form-control{
+        border: 2px solid var(--buttonText);
+        box-shadow: var(--boxshadow1);
+        font-weight: var(--font-weigh4);
+    }
+    .account_form .account_body .form .form-control:focus{
+        box-shadow: none;
+        border: 2px solid var(--colorLogo);
+    }
+    .account_form .account_body .form .btn{
+        background-color: var(--colorLogo1);
+        color: var(--buttonText);
+        font-weight: var(--font-weigh5);
+    }
+/* =========X=== ACCOUNT FROM ====X========= */
+
+/* ============= DASHBOARD ============= */
+    #after_login{
+        background-color: var(--backgroundColor);
+        box-shadow: var(--boxShadow);
+        border-bottom: 1px solid var(--colorLogo);
+    }
+    .dashboard .left_side_bar{
+        padding-top: 75px;
+        box-shadow: var(--boxshadow1);
+        height: 100vh;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+    }
+    .dashboard .left_side_bar::-webkit-scrollbar{
+        display: none;
+    }
+    .dashboard .left_side_bar ul li{
+        margin: 10px 0px;
+    }
+    .dashboard .left_side_bar .btn{
+        width: 100%;
+        background-color: var(--colorLogo2);
+        font-weight: var(--font-weigh5);
+        text-transform: uppercase;
+        transition: ease-in-out 0.9s;
+        box-shadow: var(--boxShadow);
+        text-align: left;
+    }
+    .dashboard .left_side_bar .btn:focus{
+        border: 1px solid var(--colorLogo1);
+        
+    }
+    .dashboard .left_side_bar .btn:hover{
+        background-color: var(--colorLogo1);
+        color: var(--buttonText);
+    }
+    .dashboard .left_side_bar .active{
+        background-color: var(--colorLogo1);
+        color: var(--buttonText);
+    }
+    .dashboard .right_side_bar{
+        padding-top: 75px;
+    }
+    .dashboard .right_side_bar .heading p {
+        color: var(--colorLogo1);
+        font-size: 18PX;
+        font-weight: var(--font-weigh6);
+        margin: 15px;
+    }
+    .dashboard .right_side_bar .heading p span{
+        color: var(--colorSubHadding);
+    }
+/* ========X==== DASHBOARD ===X========= */
+
+/* ============= REPORT ========= */
+    .dashboard .right_side_bar{
+        height: 100vh;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+    }
+    .dashboard .right_side_bar::-webkit-scrollbar{
+        display: none;
+    }
+    .dashboard .right_side_bar .panal {
+        display: flex;
+        margin: 10px;
+        cursor: pointer;
+    }
+    .dashboard .right_side_bar .panal .request_form{
+        flex-basis: 50%;
+        box-shadow: var(--boxshadow1);
+        margin: 10px;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    .dashboard .right_side_bar .panal .request_form .heading h2{
+        color: var(--colorLogo1);
+        font-size: 22px;
+        font-weight: var(--font-weigh6);
+        text-align: center;
+    }
+    .dashboard .right_side_bar .panal .request_form .form{
+        color: var(--colorSubHadding);
+        font-weight: var(--font-weigh4);
+    }
+    .dashboard .right_side_bar .panal .request_form .form .form-label{
+        color: var(--colorSubHadding);
+        font-weight: var(--font-weigh4);
+    }
+    .dashboard .right_side_bar .panal .request_form .form .form-control, .dashboard .right_side_bar .panal .request_form .form .form-select{
+        border: 2px solid var(--buttonText);
+        box-shadow: var(--boxshadow1);
+        font-weight: var(--font-weigh4);
+    }
+    .dashboard .right_side_bar .panal .request_form .form .form-control:focus,.dashboard .right_side_bar .panal .request_form .form .form-select:focus{
+        box-shadow: none;
+        border: 2px solid var(--colorLogo);
+    }
+    .dashboard .right_side_bar .panal .request_form  .form .btn{
+        background-color: var(--colorLogo1);
+        color: var(--buttonText);
+        font-weight: var(--font-weigh5);
+    }
+    .dashboard .right_side_bar .panal .response{
+        flex-basis: 50%;
+        box-shadow: var(--boxshadow1);
+        margin: 10px;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    .dashboard .right_side_bar .panal .response .heading h2{
+        color: var(--colorLogo1);
+        font-size: 22px;
+        font-weight: var(--font-weigh6);
+        text-align: center;
+    }
+    .dashboard .right_side_bar .panal .response .response_row li{
+        color: var(--colorSpan);
+        padding: 5px 0px;
+        font-weight: var(--font-weigh6);
+        font-size: 20px;
+    }
+    .dashboard .right_side_bar .panal .response .response_row li span{
+        color: var(--colorSubHadding);
+    }
+/* =========X=== REPORT ===X===== */
+
+/* ============= Calories Burned By Activity ================ */
+    .activities{
+        margin:15px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: var(--boxshadow1);
+    }
+    .activities .form .form-control{
+        border: 2px solid var(--buttonText);
+        box-shadow: var(--boxshadow1);
+        font-weight: var(--font-weigh4);
+    }
+    .activities .form .btn{
+        background-color: var(--colorLogo1);
+        color: var(--buttonText);
+        font-weight: var(--font-weigh5);
+    }
+    .activities .form .form-control:focus{
+        box-shadow: none;
+        border: 2px solid var(--colorLogo);
+    }
+    .activities .form .form-control:disabled {
+        background-color: var(--backgroundColor);
+        opacity: 1;
+        border: 2px solid var(--colorLogo);
+    }
+/* =========X=== Calories Burned By Activity ===X============ */

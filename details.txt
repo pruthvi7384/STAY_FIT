@@ -1,0 +1,37 @@
+* STAY_FIT *
+
+SETUP REQUIRMENT
+
+1] Download JAVA 11 
+2] Set JAVA JDK PATH to enviroment veriable and JAVA_HOME
+3] Quarkus setup in your pc - GO TO THE WEBSITE - quarkus.io and follow the step
+4] Download POSTMAN 
+5] Download Node JS
+6] Download wampp or xampp server
+
+TECHNOLOGY
+
+FRONT END - Vue Js ( Front End Framwork )
+BACK END - Quarkus ( JAVA Framwork )
+DATABASE - MySQL
+
+BACKEND DEPENDANCIES
+1] smllery-jwt
+2] hibernate-reactive-with-panache
+3] mysql-reactive-client
+4] Jakson
+
+FRONT END DEPENDANCIES
+
+1] Boostrap - 5
+2] Vue Router - 4
+3] axios - For api calling
+
+PROJECt SETUP
+
+1] Un Zip the project file
+2] The project foloder containt 2 folders
+3] Frontend and Backend
+4] Onen the both folder in IDE
+5] run frontend folder - npm run dev
+6] run backend folder - quarkus dev

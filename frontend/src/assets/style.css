@@ -324,4 +324,27 @@ ul{
         opacity: 1;
         border: 2px solid var(--colorLogo);
     }
+    .calory_report{
+        margin:15px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: var(--boxshadow1);
+    }
+    .calory_report .heading h2{
+        color: var(--colorLogo1);
+        font-size: 22px;
+        font-weight: var(--font-weigh6);
+    }
+    .calory_report .report_calories ul{
+        margin-top:10px;
+    }
+    .calory_report .report_calories ul li{
+        color: var(--colorSpan);
+        padding: 5px 0px;
+        font-weight: var(--font-weigh6);
+        font-size: 20px;
+    }
+    .calory_report .report_calories ul li span{
+        color: var(--colorSubHadding);
+    }
 /* =========X=== Calories Burned By Activity ===X============ */

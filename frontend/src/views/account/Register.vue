@@ -61,8 +61,6 @@ export default {
                 const accessToken = localStorage.getItem("ACCESS_TOKEN");
                 if(accessToken != null){
                      this.$router.push('/dashboard');
-                }else{
-                     this.$router.push('/login');
                 }
             },
         // =====X=== LOGIN CHECK ===X=========

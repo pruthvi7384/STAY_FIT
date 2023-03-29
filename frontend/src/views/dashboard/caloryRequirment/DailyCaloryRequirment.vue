@@ -111,14 +111,19 @@ export default {
         // ============= Daily Calory Requirmrnts Calculate From API ============
             async getDailyCalory(){
                 this.loder = true
-                try{
-                    const serverResponse = await server.getCaloryRequirments(this.request,this.level,this.gender);
-                    this.response=serverResponse.data.data
-                    console.log("Daily Calory Requirment - ",this.response);
-                    this.loder = false;
-                }catch(e){
-                    console.log("Error - ",e);
-                    this.loder = false;
+                if(this.request[0].value == "" || this.request[1].value == "" || this.request[2].value == "" || this.gender == "" || this.level == ""){
+                    alert("Please fill in all fields appropriately!");
+                    this.loder = false
+                }else{
+                    try{
+                        const serverResponse = await server.getCaloryRequirments(this.request,this.level,this.gender);
+                        this.response=serverResponse.data.data
+                        console.log("Daily Calory Requirment - ",this.response);
+                        this.loder = false;
+                    }catch(e){
+                        console.log("Error - ",e);
+                        this.loder = false;
+                    }
                 }
             },
         // ========X==== Daily Calory Requirmrnts Calculate From API ===X========

@@ -61,6 +61,8 @@ export default {
                 const accessToken = localStorage.getItem("ACCESS_TOKEN");
                 if(accessToken != null){
                      this.$router.push('/dashboard');
+                }else{
+                     this.$router.push('/login');
                 }
             },
         // =====X=== LOGIN CHECK ===X=========
@@ -76,6 +78,7 @@ export default {
                 }
                 if(request.firstName =="" || request.lastName == "" || request.emailId == "" || request.password == ""){
                     alert("Please fill in all fields appropriately!");
+                    this.loder = false
                 }else{
                     console.log("REGISTRATION REQUEST - ",request);
                     try{
@@ -113,6 +116,7 @@ export default {
                                 }
                             ]
                         }
+                        this.loginCheck();
                     }catch(error){
                         console.log("Error - ",error)
                         this.loder = false

@@ -56,6 +56,19 @@
               }
           ]
         }
+      },
+      methods:{
+         // ========= LOGIN CHECK =============
+            loginCheck(){
+                const accessToken = localStorage.getItem("ACCESS_TOKEN");
+                if(accessToken == null){
+                     this.$router.push('/login');
+                }
+            }
+        // =====X=== LOGIN CHECK ===X=========
+      },
+      mounted(){
+        this.loginCheck()
       }
     }
 </script>

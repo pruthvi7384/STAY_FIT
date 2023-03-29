@@ -62,6 +62,7 @@ export default {
                 }
                 if(request.emailId == "" || request.password == ""){
                     alert("Please fill in all fields appropriately!");
+                    this.loder = false
                 }else{
                     console.log("LOGIN REQUEST - ",request);
                     try{
@@ -70,6 +71,7 @@ export default {
                         //======== LOCAL STORAGE SET ACCESS TOKEN RECIVED FORM SERVER ==========
                         if(this.response.STATUS == "SUCCESS"){
                             localStorage.setItem("ACCESS_TOKEN",this.response.ACCESS_TOKEN);
+                            localStorage.setItem("ID",this.response.ID)
                             this.login=[
                                 {
                                     value:"",

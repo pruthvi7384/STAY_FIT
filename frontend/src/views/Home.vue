@@ -30,13 +30,13 @@ export default {
     },
     methods:{
       // ========= LOGIN CHECK =============
-            loginCheck(){
-                const accessToken = localStorage.getItem("ACCESS_TOKEN");
-                if(accessToken != null){
-                     this.$router.push('/dashboard');
-                }
-            },
-        // =====X=== LOGIN CHECK ===X=========
+          loginCheck(){
+              const accessToken = localStorage.getItem("ACCESS_TOKEN");
+              if(accessToken != null){
+                    this.$router.push('/dashboard');
+              }
+          },
+      // =====X=== LOGIN CHECK ===X=========
     },
     mounted(){
       this.loginCheck()

@@ -86,14 +86,19 @@ export default {
         // =============== Calculate Body Fat From Api =============
             async getFat(){
                 this.loder = true
-                try{
-                    const serverResponse = await server.getFatPersentage(this.request,this.gender);
-                    this.response=serverResponse.data.data
-                    console.log("Body Fat Calculation - ",serverResponse.data.data);
-                    this.loder = false;
-                }catch(e){
-                    console.log("Error - ",e);
-                    this.loder = false;
+                if(this.request[0].value == ""|| this.request[1].value == "" || this.request[2].value == "" || this.request[3].value == "" || this.request[4].value == "" || this.request[5].value == ""){
+                    alert("Please fill in all fields appropriately!");
+                    this.loder = false
+                }else{
+                    try{
+                        const serverResponse = await server.getFatPersentage(this.request,this.gender);
+                        this.response=serverResponse.data.data
+                        console.log("Body Fat Calculation - ",serverResponse.data.data);
+                        this.loder = false;
+                    }catch(e){
+                        console.log("Error - ",e);
+                        this.loder = false;
+                    }
                 }
             },
         // ==========X==== Calculate Body Fat From Api ===X=========

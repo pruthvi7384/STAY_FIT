@@ -20,6 +20,7 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
@@ -110,6 +111,7 @@ public class UserResource {
                         }
                         response.put(GlobalConstant.MESSAGE,"You are login successfully!");
                         response.put("ACCESS_TOKEN",token);
+                        response.put("ID",user.getId().toString());
                         response.put(GlobalConstant.STATUS,GlobalConstant.SUCCESS);
                     }else {
                         response.put(GlobalConstant.MESSAGE,"Please enter the correct credentials!");
@@ -131,12 +133,12 @@ public class UserResource {
      */
 
     @GET
-    @Path("profile/view")
+    @Path("profile/view/{id}")
     @RolesAllowed({"USER","ADMIN","PRO_USER","PRO_ADMIN"})
-    public Uni<Response> profile(){
-        log.info("REST - user profile view request ID - {}",7);
+    public Uni<Response> profile(@PathParam("id")Long id){
+        log.info("REST - user profile view request ID - {}",id);
         HashMap<String, Object> response = new HashMap<>();
-        return Panache.withTransaction(() -> userRepository.findById(7l)
+        return Panache.withTransaction(() -> userRepository.findById(id)
                 .onItem()
                 .ifNotNull()
                 .call(user -> Mutiny.fetch(user.getRoles()))
@@ -163,10 +165,9 @@ public class UserResource {
      */
 
     @PUT
-    @Path("profile/update")
+    @Path("profile/update/{id}")
     @RolesAllowed({"USER","ADMIN","PRO_USER","PRO_ADMIN"})
-    public Uni<Response> update(User user){
-        Long id = jwt.getClaim("USER_ID");
+    public Uni<Response> update(User user, @PathParam("id") Long id){
         log.info("REST - user profile update request ID - {} REQUEST - {}",id, user);
         HashMap<String, Object> response = new HashMap<>();
         return Panache.withTransaction(() -> userRepository.findById(id)
@@ -179,6 +180,7 @@ public class UserResource {
                     user1.setFirstName(user.getFirstName());
                     user1.setLastName(user.getLastName());
                     user1.setEmailId(user.getEmailId());
+                    user1.setUpdatedDate(new Date());
                     response.put(GlobalConstant.MESSAGE,"USER PROFILE UPDATED SUCCESSFULLY");
                     response.put(GlobalConstant.STATUS,GlobalConstant.SUCCESS);
                     return Response.ok(response).build();

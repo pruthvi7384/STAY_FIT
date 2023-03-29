@@ -27,6 +27,27 @@ FRONT END DEPENDANCIES
 2] Vue Router - 4
 3] axios - For api calling
 
+REQUEST TEST 
+
+1] Body fat percentage - 
+    age: '25',
+    gender: 'male',
+    weight: '70',
+    height: '178',
+    neck: '50',
+    waist: '96',
+    hip: '92'
+
+2] Calory Burned By Activity
+	activity: skiing
+	Duration: ENTER IN MINUTES
+
+API USED 
+
+CALORY BURNED BY ACTIVITY - https://rapidapi.com/apininjas/api/calories-burned-by-api-ninjas/
+
+OTHER - https://rapidapi.com/malaaddincelik/api/fitness-calculator/
+
 PROJECt SETUP
 
 1] Un Zip the project file
@@ -34,4 +55,4 @@ PROJECt SETUP
 3] Frontend and Backend
 4] Onen the both folder in IDE
 5] run frontend folder - npm run dev
-6] run backend folder - quarkus dev
+6] run backend folder - quarkus dev / /.mvnw complie quarkus:dev

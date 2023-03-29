@@ -57,15 +57,20 @@ export default {
         // =============== Calories Burned By Activities From Api =============
             async getCaloriesBurnedData(){
                 this.loder = true
-                try{
-                    const serverResponse = await server.getCaloriesBurndByActivity(this.request[1].value,this.request[0].value,this.request[2].value);
-                    this.response=serverResponse.data[0]
-            
-            console.log("Calories Calculation By Activity - ",serverResponse.data);
-                    this.loder = false;
-                }catch(e){
-                    console.log("Error - ",e);
-                    this.loder = false;
+                if(this.request[0].value == "" || this.request[1].value == "" || this.request[2].value == ""){
+                    alert("Please fill in all fields appropriately!");
+                    this.loder = false
+                }else{
+                    try{
+                        const serverResponse = await server.getCaloriesBurndByActivity(this.request[1].value,this.request[0].value,this.request[2].value);
+                        this.response=serverResponse.data[0]
+                
+                        console.log("Calories Calculation By Activity - ",serverResponse.data);
+                        this.loder = false;
+                    }catch(e){
+                        console.log("Error - ",e);
+                        this.loder = false;
+                    }
                 }
             },
         // ==========X==== Calories Burned By Activities From Api ===X=========

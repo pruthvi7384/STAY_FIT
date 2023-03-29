@@ -77,31 +77,36 @@
             // =========== Ideal Weight From API ============
                 async getIdealWeight(){
                     this.loder = true
-                    try{
-                    const serverResponse = await server.getIdealWeight(this.gender, this.request[0].value,);
-                    this.response = [
-                            {
-                                name:"Devine",
-                                value:serverResponse.data.data.Devine
-                            },
-                            {
-                                name:"Hamwi",
-                                value:serverResponse.data.data.Hamwi
-                            },
-                            {
-                                name:"Miller",
-                                value:serverResponse.data.data.Miller
-                            },
-                            {
-                                name:"Robinson",
-                                value:serverResponse.data.data.Robinson
-                            }
-                    ]
-                    console.log("IDEAL WEIGHT - ",this.response);
-                    this.loder = false;
-                    }catch(e){
-                        console.log("Error - ",e);
-                        this.loder = false;
+                    if(this.request[0].value == "" || this.gender == ""){
+                         alert("Please fill in all fields appropriately!");
+                         this.loder = false
+                    }else{
+                        try{
+                            const serverResponse = await server.getIdealWeight(this.gender, this.request[0].value,);
+                            this.response = [
+                                    {
+                                        name:"Devine",
+                                        value:serverResponse.data.data.Devine
+                                    },
+                                    {
+                                        name:"Hamwi",
+                                        value:serverResponse.data.data.Hamwi
+                                    },
+                                    {
+                                        name:"Miller",
+                                        value:serverResponse.data.data.Miller
+                                    },
+                                    {
+                                        name:"Robinson",
+                                        value:serverResponse.data.data.Robinson
+                                    }
+                            ]
+                            console.log("IDEAL WEIGHT - ",this.response);
+                            this.loder = false;
+                        }catch(e){
+                            console.log("Error - ",e);
+                            this.loder = false;
+                        }
                     }
                 },
             // ======X==== Ideal Weight From API ====X=======

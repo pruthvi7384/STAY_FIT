@@ -72,27 +72,32 @@ export default {
         // ============= Calculate BMI ============
             async getBMI(){
                 this.loder = true
-                try{
-                    const serverResponse = await server.getBMI(this.request[0].value, this.request[1].value,  this.request[2].value);
-                    this.response = [
-                        {
-                            name:"BMI",
-                            value:serverResponse.data.data.bmi
-                        },
-                        {
-                            name:"Health Status",
-                            value:serverResponse.data.data.health
-                        },
-                        {
-                            name:"Health BMI Range",
-                            value:serverResponse.data.data.healthy_bmi_range
-                        }
-                    ]
-                    console.log("BMI - ",this.response);
-                    this.loder = false;
-                }catch(e){
-                    console.log("Error - ",e);
-                    this.loder = false;
+                if(this.request[0].value == "" || this.request[1].value == "" || this.request[2].value == ""){
+                    alert("Please fill in all fields appropriately!");
+                    this.loder = false
+                }else{
+                    try{
+                        const serverResponse = await server.getBMI(this.request[0].value, this.request[1].value,  this.request[2].value);
+                        this.response = [
+                            {
+                                name:"BMI",
+                                value:serverResponse.data.data.bmi
+                            },
+                            {
+                                name:"Health Status",
+                                value:serverResponse.data.data.health
+                            },
+                            {
+                                name:"Health BMI Range",
+                                value:serverResponse.data.data.healthy_bmi_range
+                            }
+                        ]
+                        console.log("BMI - ",this.response);
+                        this.loder = false;
+                    }catch(e){
+                        console.log("Error - ",e);
+                        this.loder = false;
+                    }
                 }
             },
         // ========X==== Calculate BMI ===X========

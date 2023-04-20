@@ -48,6 +48,10 @@ CALORY BURNED BY ACTIVITY - https://rapidapi.com/apininjas/api/calories-burned-b
 
 OTHER - https://rapidapi.com/malaaddincelik/api/fitness-calculator/
 
+Note 
+
+For the some functionality we used the REST APIS 
+
 PROJECt SETUP
 
 1] Un Zip the project file
@@ -56,3 +60,23 @@ PROJECt SETUP
 4] Onen the both folder in IDE
 5] run frontend folder - npm run dev
 6] run backend folder - quarkus dev / /.mvnw complie quarkus:dev
+
+
+FUTURE WORK 
+
+1] we are planing to add timer and for the time automaticaly calculate calories burend
+2] we are planing to weekly update send to theire register email
+3] we are planing to desigin dashboard analytic for user can track thier helth status
+
+NOTE 
+
+For project demo you need to start Xampp / Wampp server and also run both folder (frontend/backend)
+
+OTHER DETAILS
+
+Feture - Single page web application in future we are plaing to convert single page web application to PWA (Prograsive web app) that is installable Android as wel as IOS
+
+Technology choose
+
+We choose VUE js for frontend develpment and Quarkus choose for backend development
+Vuejs choose for building single page application and Quarkus chose because is java framwork open source and lightweight framwork. today most demanding framwork.
